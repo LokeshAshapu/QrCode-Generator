@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="script.js"></script>
+    <title>Qr-Generator</title>
+</head>
+<body class="bg-violet-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full flex items-center justify-center flex-col">
+        <h1 class=" text-lg font-bold text-black">Qr Code Generator</h1>
+        <input type="text" id="qrInput" placeholder="Enter text to generate QR code" class="w-full p-2 border border-gray-300 rounded-lg mt-4 ">
+        <button onclick="generateQrCode()" class=" bg-indigo-500 text-white hover:border-transparent hover:bg-blue-600 cursor-pointer hover:text-white rounded-md p-2 mt-4">Generate Qr code</button>
+        <div class="mt-4 flex justify-center">
+            <img id="qrCodeImage" src=""alt="Your QR code will appear here">
+        </div>
+    </div>
+</body>
+</html>
