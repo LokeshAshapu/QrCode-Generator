@@ -1,0 +1,6 @@
+@import tailwind;
+img:not([src]), 
+img[src=""], 
+img[src="#"] {
+  display: none;
+}
