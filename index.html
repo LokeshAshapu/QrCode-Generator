@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Qr-Generator</title>
+</head>
+
+<body class="bg-violet-100 flex flex-col items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full flex items-center justify-center flex-col gap-4 " id="mainContainer">
+        <h1 class="text-2xl font-bold text-gray-800">Qr Code Generator and Scanner</h1>
+        <p class="text-gray-600">Select an option to proceed</p>
+        <select class="w-full p-2 border border-gray-300 rounded-lg mt-4" id="optionSelector">
+            <optgroup class="text-gray-500 w-10 border-transparent" label="Select an option" id="optionGroup">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Qr-Generator" id="Qr-Generator">Qr-Generator</option>
+                <option value="Qr-Scanner" id="Qr-Scanner">Qr-Scanner</option>
+            </optgroup>
+        </select>
+        <div id="qrGenerator" class="hidden">
+        <div class=" max-w-md w-50 flex items-center justify-center flex-col gap-4">
+            <h1 class=" text-lg font-bold text-black mt-4">Qr Code Generator</h1>
+            <input type="text" id="qrInput" placeholder="Enter text to generate QR code"
+                class="w-full p-2 border border-gray-300 rounded-lg mt-4 ">
+            <button onclick="generateQrCode()"
+                class=" bg-indigo-500 text-white hover:border-transparent hover:bg-blue-600 cursor-pointer hover:text-white rounded-md p-2 mt-4">Generate
+                Qr code</button>
+            <div class="mt-4 flex justify-center">
+                <img id="qrCodeImage" src="" alt="Your QR code will appear here">
+            </div>
+        </div>
+    </div>
+    <div id="qrScanner" class="hidden flex items-center justify-center flex-col">
+        <div id="reader" class="w-50"></div>
+        <div id="scanResult" class=" mr-3 text-blue-500 font-bold"></div>
+        <button onclick="startQrScanner()" class="bg-indigo-500 text-white hover:border-transparent hover:bg-blue-600 cursor-pointer hover:text-white rounded-md p-2 mt-4">Start Scanner</button>
+    </div>
+    </div>
+
+    
+
+</body>
+
+</html>
